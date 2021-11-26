@@ -6,8 +6,6 @@
 # How does this work?
 # Lets say a user opens a browser and searches for something on web, and with the help of Http or DNS( from application layer) it brings up a secure connection to that service with the help of tcp connection(transport layer)
 # which writes src and dest ports and now since it has ports it needs ip address, obviously, and thats when it comes to layer 3, the network layer. the user's computer is going to put its own ip address as the src address and the destination address as server's IP address(which is found out by the help of DNS) it tries to reach and gives it to layer2 which is the data link layer via ethernet cable.
-# Layer2 is going to add the mac address of user as src and waits for server's mac address as dest and for that arp  will broadcast its user computer's ip address and search for the ip address of the server it wants and arp will find that ip adress mac adress and once it finds it will establish a secure connection with users mac address and storess it so that the next time it doesnt have to go through all these processes.
+# Layer2 is going to add the mac address of user as src and waits for server's mac address as dest and for that arp  will broadcast destination ip asking it to givr mac address to your ip.arp will find that ip adress and givr its mac adress and once it finds it will establish a secure connection with users mac address and storess it so that the next time it doesnt have to go through all these processes.
 #
 # IP --> arp_server-->macaddress
-
-
