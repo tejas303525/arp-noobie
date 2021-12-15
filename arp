@@ -1,11 +1,11 @@
 #  What is ARP?
-#Adress Resolution Protocol is responsible for knowing the address of a system.
-#i.e It stores the ipaddress so that when a system does a web request, ARP will broadcast requesting the ipaddress and once a match is found from the server its looking for,
-# arp will respond to it and that ip's mac addr will be stored when the same system req for any other services it will simply know where to send the data pcakets to.
+#Adress Resolution Protocol is responsible for knowing the mac address of a system.
+#i.e it stores the corresponding ip address of the mac address in the system so that the next time when the sytem uses that ip to request the data packets will know where to go exactly.
 #
 # How does this work?
-# Lets say a user opens a browser and searches for something on web, and with the help of Http or DNS( from application layer) it brings up a secure connection to that service with the help of tcp connection(transport layer)
-# which writes src and dest ports and now since it has ports it needs ip address, obviously, and thats when it comes to layer 3, the network layer. the user's computer is going to put its own ip address as the src address and the destination address as server's IP address(which is found out by the help of DNS) it tries to reach and gives it to layer2 which is the data link layer via ethernet cable.
-# Layer2 is going to add the mac address of user as src and waits for server's mac address as dest and for that arp  will broadcast destination ip asking it to givr mac address to your ip.arp will find that ip adress and givr its mac adress and once it finds it will establish a secure connection with users mac address and storess it so that the next time it doesnt have to go through all these processes.
-#
-# IP --> arp_server-->macaddress
+# Lets say a user opens a browser and searches for something on web, and with the help of Http or DNS( from application layer) it brings up a secure connection to that service. The tcp connection(transport layer)
+#  writes src and dest ports and now since it has ports it need to place ip address and thats when it comes to layer 3, the network layer. the user's computer is going to be placed at src address and the destination address as server's IP address(which is found out by the help of DNS) and passses it to layer2 which is the data link layer via ethernet cable\.
+# Layer2 is going to add the mac address of user as src and waits for destination mac address as dest and  this is where  arp  will start broadcasting destination ip address and wait for the destination ip to respond back with its mac address
+# IP --> arp_cache-->macaddress
+
+
